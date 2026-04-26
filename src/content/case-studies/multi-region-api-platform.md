@@ -30,28 +30,28 @@ lessons:
 
 <div class="mermaid">
 graph TD
-  Route53[Route 53 Latency Routing] --> US
+  Route53["Route 53 Latency Routing"] --> US
   Route53 --> EU
   Route53 --> AP
 
-  subgraph US[us-east-1]
-    ALB1[ALB] --> API1[API]
-    API1 --> Redis1[(Redis)]
-    API1 --> PG1[(PostgreSQL Primary)]
+  subgraph US["us-east-1"]
+    ALB1["ALB"] --> API1["API"]
+    API1 --> Redis1[("Redis")]
+    API1 --> PG1[("PostgreSQL Primary")]
   end
 
-  subgraph EU[eu-west-1]
-    ALB2[ALB] --> API2[API]
-    API2 --> Redis2[(Redis)]
-    API2 --> PG2[(PostgreSQL Replica)]
+  subgraph EU["eu-west-1"]
+    ALB2["ALB"] --> API2["API"]
+    API2 --> Redis2[("Redis")]
+    API2 --> PG2[("PostgreSQL Replica")]
   end
 
-  subgraph AP[ap-southeast-1]
-    ALB3[ALB] --> API3[API]
-    API3 --> Redis3[(Redis)]
-    API3 --> PG3[(PostgreSQL Replica)]
+  subgraph AP["ap-southeast-1"]
+    ALB3["ALB"] --> API3["API"]
+    API3 --> Redis3[("Redis")]
+    API3 --> PG3[("PostgreSQL Replica")]
   end
 
-  PG1 -. Async Replication .-> PG2
-  PG1 -. Async Replication .-> PG3
+  PG1 -.->|Async Replication| PG2
+  PG1 -.->|Async Replication| PG3
 </div>

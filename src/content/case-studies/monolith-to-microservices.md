@@ -30,12 +30,12 @@ lessons:
 
 <div class="mermaid">
 graph TD
-  Kong[API Gateway <br/> Kong] --> Payments[Payments <br/> Go]
-  Kong --> Identity[Identity <br/> Go]
-  Kong --> Ledger[Ledger <br/> Go]
-  Kong --> Notifications[Notifications <br/> Go]
+  Kong["API Gateway <br/> Kong"] --> Payments["Payments <br/> Go"]
+  Kong --> Identity["Identity <br/> Go"]
+  Kong --> Ledger["Ledger <br/> Go"]
+  Kong --> Notifications["Notifications <br/> Go"]
   
-  Payments --> Kafka[(Kafka Cluster)]
+  Payments --> Kafka[("Kafka Cluster")]
   Identity --> Kafka
   Ledger --> Kafka
   Notifications --> Kafka
