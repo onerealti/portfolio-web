@@ -7,10 +7,10 @@ import { defineConfig, fontProviders } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
 	// Update this to your actual domain when deploying
-	site: 'https://murtaza.github.io',
-	// If deploying to a subpath (e.g., https://murtaza.github.io/murtaza-portfolio/),
+	site: 'https://onerealti.github.io',
+	// If deploying to a subpath (e.g., https://onerealti.github.io/portfolio-web/),
 	// uncomment and set the base path:
-	// base: '/murtaza-portfolio',
+	base: '/portfolio-web',
 	output: 'static',
 	integrations: [mdx(), sitemap()],
 	fonts: [
